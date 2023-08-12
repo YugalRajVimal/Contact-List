@@ -7,6 +7,27 @@ const app=express();
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.urlencoded());
+app.use(express.static('assets'));
+
+// // Middleware 1
+
+// app.use(function(req,res,next){
+
+//     req.myName =  'Sagar';
+
+//     // console.log("Middleware 1 Called");
+//     next();
+// });
+
+// //Middleware 2
+
+// app.use(function(req,res,next){
+
+//     console.log("From Middleware 2 : ",req.myName);
+
+//     // console.log("Middleware 2 Called");
+//     next();
+// });
 
 var contactList = [
     {
@@ -29,6 +50,9 @@ var contactList = [
 
 
 app.get('/',function(request,response){
+
+    console.log("From get route controller : ",request.myName);
+
     // console.log(request)
     // console.log(__dirname)
     // response.send('<h1>Cool, it is running!</h1>');
@@ -46,9 +70,23 @@ app.get('/practice',function(request,response){
 
 app.post('/add_contact',function(req,res){
     // return res.redirect('practice');
-    console.log(req.body);
-    console.log(req.body.name);
-    console.log(req.body.phone);
+
+    // Print 
+    // console.log(req.body);
+    // console.log(req.body.name);
+    // console.log(req.body.phone);
+
+    //Insert
+    contactList.push({
+        name: req.body.name,
+        phone: req.body.phone
+    })
+    // Or
+    // contactList.push(req.body);
+
+
+    return res.redirect('back');
+
 });
 
 app.listen(port,function(err){
