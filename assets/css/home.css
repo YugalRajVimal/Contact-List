@@ -1,3 +1,54 @@
 body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#page-heading{
     text-align: center;
+    margin-top: 25px;
+    color: black;
+}
+
+#contacts li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+    /* text-align: center; */
+}
+
+#contact{
+    width: 350px;
+    display: flex;
+    margin-left: -55;
+    justify-content: space-between;
+    background-color:rgb(200, 255, 255);
+    border-radius: 5px;
+}
+
+#contact p{
+    margin: 10px;
+}
+
+form{
+    width: 380px;
+    margin: auto auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+form input{
+    width: 120px;
+    border: 0;
+    border-bottom: 1px solid black;
+    margin: 0;
+}
+
+form button{
+    width: auto;
+    border: 0;
+    background-color: grey;
+    cursor: pointer;
+    margin-right: 12px;
+    border-radius: 5px;
 }

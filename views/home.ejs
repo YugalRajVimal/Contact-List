@@ -3,17 +3,20 @@
         <title>
             <%= title %>
         </title>
+        <script src="https://kit.fontawesome.com/0b8daf5da8.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <h1>Contact List</h1>
+        <h1 id="page-heading"> <i class="fa-regular fa-address-book"></i> My Contact List</h1>
 
-        <div>
-            <ul>
+        <div id="main-list">
+            <ul id="contacts">
                 <% for(let i of contact_list){ %>
                     <li>
-                        <p> <%= i.name %> </p>
-                        <p> <%= i.phone %> </p>
+                        <div id="contact">
+                            <p> <%= i.name %> </p>
+                            <p> <%= i.phone %> </p>
+                        </div>
                     </li>
                 <% } %>
             </ul>
