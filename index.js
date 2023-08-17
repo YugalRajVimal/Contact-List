@@ -51,7 +51,7 @@ var contactList = [
 
 app.get('/',function(request,response){
 
-    console.log("From get route controller : ",request.myName);
+    // console.log("From get route controller : ",request.myName);
 
     // console.log(request)
     // console.log(__dirname)
@@ -87,6 +87,32 @@ app.post('/add_contact',function(req,res){
 
     return res.redirect('back');
 
+});
+
+// for deleting a contact
+app.get('/delete-contact/',function(req,res){
+    // console.log(req.query);
+
+    // get the query from URL
+    let phone = req.query.phone;
+    let index=0;
+
+    for(let i of contactList){ 
+        if(i.phone == phone){
+            break;
+        }
+        index++;
+    }
+
+    // OR
+
+    // let index = contactList.findIndex(contact => contact.phone == phone);
+
+    if(index < contactList.length){
+        contactList.splice(index,1);
+    }
+
+    return res.redirect('back');
 });
 
 app.listen(port,function(err){

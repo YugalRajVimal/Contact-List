@@ -1,12 +1,45 @@
 body{
     margin: 0;
     font-family: sans-serif;
+    background-color: rgb(23, 23, 23);
+}
+
+#container{
+    width: 420px;
+    height:740px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: black;
+    text-align: center;
+    margin: 40px auto;
+}
+
+#notch{
+    margin-top: 10px;
+    font-size: large;
 }
 
 #page-heading{
     text-align: center;
     margin-top: 25px;
-    color: black;
+    color:  rgb(194,221,255);;
+}
+
+#contact-details{
+    width: 390px;
+    background-color: rgb(23, 28, 35) ;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: -40;
+    justify-content: space-between;
+    color: rgb(194,221,255);
+}
+
+#contact-details i{
+    color:  rgb(194,221,255);
+    margin: 10px;
+    cursor: pointer;
 }
 
 #contacts li{
@@ -20,9 +53,8 @@ body{
 #contact{
     width: 350px;
     display: flex;
-    margin-left: -55;
     justify-content: space-between;
-    background-color:rgb(200, 255, 255);
+    background-color:rgb(32, 37, 43) ;
     border-radius: 5px;
 }
 
@@ -40,14 +72,16 @@ form{
 form input{
     width: 120px;
     border: 0;
-    border-bottom: 1px solid black;
+    color:  rgb(194,221,255);;
+    background-color: black;
+    border-bottom: 1px solid  rgb(194,221,255);;
     margin: 0;
 }
 
 form button{
     width: auto;
     border: 0;
-    background-color: grey;
+    background-color:  rgb(194,221,255);;
     cursor: pointer;
     margin-right: 12px;
     border-radius: 5px;
