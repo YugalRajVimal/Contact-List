@@ -27,7 +27,7 @@
                                         <p> <%= i.phone %> </p>
                                     </div>
                                     <div id="delete-contact">
-                                        <a href="/delete-contact/?id=<%= i._id %>">
+                                        <a href="/delete-contact/?phone=<%= i.phone %>">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
                                     </div>
@@ -37,7 +37,7 @@
                     </ul>
                 </div>
 
-                <form action="/create_contact" method="post">
+                <form action="/create_contact" method="POST">
 
                     <input type="text" name="name" placeholder="Enter Name" required>
 
