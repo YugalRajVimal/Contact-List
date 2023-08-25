@@ -50,7 +50,7 @@ app.get('/',async function(request,response){
             contact_list: contact
         });
     } catch (error) {
-        console.log("Error in fetching contacts from DB");
+        console.log("Error in fetching contacts from DB",error);
         return;
     }
     // return response.render('home',{
@@ -81,6 +81,25 @@ app.post('/create_contact',async function(req,res){
     // return res.redirect('/');
 
 });
+
+app.post('/find_contact',async function(req,res){
+
+    try {
+        let contact = await Contact.find({phone : req.body.name_num});
+        return res.render('home',{
+            title: "Contact List",
+            contact_list: contact
+        });
+    } catch (error) {
+        console.log("Error in filtering contacts from DB",error);
+        return;
+    }
+
+});
+
+async function end_filter(){
+    
+}
 
 app.listen(port,function(err){
     if(err){
